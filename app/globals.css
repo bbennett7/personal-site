@@ -1,14 +1,5 @@
 @import "tailwindcss";
 
-@theme {
-  --color-ochre: #d4a440;
-  --color-olive: #6a6028;
-  --color-olive-dark: #5b5119;
-  --color-olive-mid: #74683a;
-  --color-paper: #ffffff;
-  --color-paper-warm: #fafaf6;
-}
-
 :root {
   --ochre: #d4a440;
   --olive: #6a6028;
@@ -54,26 +45,6 @@ a:hover,
 a:active {
   color: inherit;
   text-decoration: none;
-}
-
-/* In-prose links get the ochre underline treatment */
-.prose a {
-  color: var(--olive-dark);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--ochre);
-  transition: color 0.15s ease;
-}
-
-.prose a:hover {
-  color: var(--ochre);
-}
-
-/* Italic + bold emphasis inside prose — ochre tint */
-.prose em strong,
-.prose strong em {
-  color: var(--ochre);
 }
 
 /* Container */

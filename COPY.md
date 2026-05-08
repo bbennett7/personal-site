@@ -16,7 +16,6 @@ This is the actual text for each page. Edit before launch as needed, but these a
 ### Hero
 - **Eyebrow** (olive): `// Hi, I'm Bryn`
 - **Headline** (ochre, big): `Senior fullstack engineer.`
-- **Status pill**: `Open to new roles · Q3 2026`
 - **Tagline** (Sulphur Point bold): `Building AI product systems that actually work in production.`
 - **Body** (Bitter): `Six years shipping code at small companies — most recently *Digg*, before that *Sensible Weather*. Based in Los Angeles.`
 
@@ -50,7 +49,7 @@ CTA: `View all portfolio →` → `/portfolio`
 - **Section title**: `A bit about me.`
 
 Body (Bitter, 3 paragraphs):
-1. I'm a senior fullstack engineer based in **Laurel Canyon, Los Angeles**. I've spent the last six years shipping production code at small companies — most recently at Digg, where I went from team-era execution to architecting and owning a new service layer through a hard pivot.
+1. I'm a senior fullstack engineer based in **Los Angeles, CA**. I've spent the last six years shipping production code at small companies — most recently at Digg, where I went from team-era execution to architecting and owning a new service layer through a hard pivot.
 2. I care about *AI systems that actually work in production* — not demos, not benchmarks, but pipelines that handle real volume, fail gracefully, and get better over time. I think the best engineering happens at the seam between domains, where systems thinking and product instinct meet.
 3. Outside of work I'm [into a bunch of things](/about) — gardening, vintage music, and figuring out what the next decade of AI products will actually look like.
 
@@ -123,7 +122,7 @@ For each: problem, approach, technical decisions, outcome, what you'd do differe
 ### What it should contain
 - Career arc — 200-300 word narrative of how you got here
 - What you care about technically (AI systems in production, the seam between domains)
-- Personal context — Laurel Canyon, partner Grace, music wall, gluten-free, garden, plants
+- Personal context — Los Angeles, CA, partner Grace, music wall, gluten-free, garden, plants
 - A photo (recommended — natural light, plain-ish background, doesn't need to be a professional shoot)
 - Easter egg: 1 sentence on why the wordmark looks the way it does — explains the 60s Fillmore poster reference for anyone who notices
 - Mention `askdumbquestions.ai` here as where you write
@@ -138,7 +137,7 @@ For each: problem, approach, technical decisions, outcome, what you'd do differe
 - LinkedIn URL
 - GitHub URL
 - Optional: Cal.com or similar for scheduling
-- Brief note on what you're open to: "Recruiting conversations, AI engineering questions, collaborations"
+- Brief note on what you're open to: "AI engineering questions, collaborations, and conversations"
 - Brief note on response time: "Usually within a few days"
 
 ---
@@ -147,7 +146,7 @@ For each: problem, approach, technical decisions, outcome, what you'd do differe
 
 ### Brand column
 - Wordmark
-- Tagline: `Senior fullstack engineer based in Los Angeles. Building AI product systems. Open to new roles.`
+- Tagline: `Senior fullstack engineer based in Los Angeles. Building AI product systems.`
 
 ### Site column
 - // Site (label)

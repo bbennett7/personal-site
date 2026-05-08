@@ -13,15 +13,14 @@ export function Footer() {
               <Wordmark size="lg" />
             </div>
             <p className={styles.tagline}>
-              Senior fullstack engineer based in Los Angeles. Building AI product systems. Open to
-              new roles.
+              Senior fullstack engineer based in Los Angeles. Building AI product systems.
             </p>
           </div>
 
           <nav aria-label="Footer">
             <div className={styles.colTitle}>{'// Site'}</div>
             <ul className={styles.links}>
-              {NAV_LINKS.map(({ href, label }) => (
+              {NAV_LINKS.filter(({ href }) => href !== '/contact').map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href}>{label}</Link>
                 </li>
