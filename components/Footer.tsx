@@ -13,8 +13,7 @@ export function Footer() {
               <Wordmark size="lg" />
             </div>
             <p className={styles.tagline}>
-              Senior fullstack engineer based in Los Angeles. Building AI product systems. Open to
-              new roles.
+              Senior fullstack engineer based in Los Angeles. Building AI product systems.
             </p>
           </div>
 
