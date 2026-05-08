@@ -20,7 +20,7 @@ export function Footer() {
           <nav aria-label="Footer">
             <div className={styles.colTitle}>{'// Site'}</div>
             <ul className={styles.links}>
-              {NAV_LINKS.map(({ href, label }) => (
+              {NAV_LINKS.filter(({ href }) => href !== '/contact').map(({ href, label }) => (
                 <li key={href}>
                   <Link href={href}>{label}</Link>
                 </li>
