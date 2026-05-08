@@ -1,6 +1,6 @@
 import styles from './Wordmark.module.css';
 
-type WordmarkSize = 'md' | 'lg';
+type WordmarkSize = 'sm' | 'md' | 'lg' | 'xl';
 
 type Props = {
   size?: WordmarkSize;

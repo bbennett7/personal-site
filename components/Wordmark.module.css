@@ -25,6 +25,10 @@
 }
 
 /* Size variants */
+.sm {
+  font-size: 14px;
+}
+
 .md {
   font-size: 28px;
 }
@@ -37,4 +41,8 @@
 
 .lg {
   font-size: 26px;
+}
+
+.xl {
+  font-size: 120px;
 }
