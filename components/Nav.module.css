@@ -1,0 +1,103 @@
+.nav {
+  padding: 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--line);
+}
+
+.wordmarkLink {
+  flex-shrink: 0;
+  line-height: 0;
+  /* optical correction: aligns BENNETT baseline with nav link text under flex-end */
+  padding-bottom: 4px;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.link {
+  font-family: var(--font-heading), "Sulphur Point", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--olive);
+  position: relative;
+  padding: 6px 4px 6px 18px;
+  transition: color 0.3s ease;
+}
+
+/* Reserved space for ✻ — always 18px, no layout shift */
+.link::before {
+  /* "/ ''" hides the glyph from screen readers */
+  content: "✻" / "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0) rotate(-90deg);
+  color: var(--ochre);
+  font-size: 13px;
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.3s ease;
+  opacity: 0;
+}
+
+.link:hover,
+.link.active {
+  color: var(--ochre);
+}
+
+.link:hover::before,
+.link.active::before {
+  transform: translateY(-50%) scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--ochre);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (max-width: 700px) {
+  .links {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+  }
+
+  .links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+  }
+
+  .link {
+    padding: 6px 4px;
+  }
+
+  .link::before {
+    left: -8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link::before {
+    transition: none;
+  }
+}
