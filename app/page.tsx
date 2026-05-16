@@ -1,23 +1,187 @@
+import { Card } from '@/components/Card';
 import { PageHeader } from '@/components/PageHeader';
+import { SectionLabel } from '@/components/SectionLabel';
+import { lastRevised, type NowEntry, now } from '@/lib/now';
+import { projects } from '@/lib/portfolio';
+import { work } from '@/lib/work';
+import styles from './Home.module.css';
+
+function currentQuarter() {
+  const now = new Date();
+  const q = Math.ceil((now.getMonth() + 1) / 3);
+  return `Q${q} ${now.getFullYear()}`;
+}
+
+const numberWords = [
+  'Zero',
+  'One',
+  'Two',
+  'Three',
+  'Four',
+  'Five',
+  'Six',
+  'Seven',
+  'Eight',
+  'Nine',
+  'Ten',
+  'Eleven',
+  'Twelve',
+  'Thirteen',
+  'Fourteen',
+  'Fifteen',
+];
+
+function yearsSince(start: Date) {
+  const now = new Date();
+  const years = Math.floor((now.getTime() - start.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
+  return numberWords[years] ?? String(years);
+}
+
+const careerStart = new Date(2019, 9);
 
 export default function Home() {
   return (
-    <PageHeader
-      variant="home"
-      label="// Hi, I'm Bryn"
-      heading={
-        <>
-          Senior fullstack
-          <br />
-          engineer.
-        </>
-      }
-      tagline="Building AI product systems that actually work in production."
-    >
-      <p>
-        Six years shipping code at small companies — most recently <em>Digg</em>, before that{' '}
-        <em>Sensible Weather</em>. Based in Los Angeles.
-      </p>
-    </PageHeader>
+    <>
+      <PageHeader
+        variant="home"
+        label="// Hi, I'm Bryn"
+        heading={
+          <>
+            Senior fullstack
+            <br />
+            engineer.
+          </>
+        }
+        tagline="Senior fullstack engineer building AI-driven product systems."
+        status={`Engineering @ WellTheory · ${currentQuarter()}`}
+      >
+        <p>
+          {yearsSince(careerStart)} years shipping production code - currently <em>WellTheory</em>,
+          previously <em>Digg</em> and <em>Sensible Weather</em>. Based in Los Angeles.
+        </p>
+      </PageHeader>
+
+      {/* Now */}
+      <section className={styles.nowSection}>
+        <div className={styles.sectionHeader}>
+          <SectionLabel>Now</SectionLabel>
+          <h2 className={styles.sectionTitle}>What I&apos;m into.</h2>
+          <p className={styles.sectionMeta}>Updated monthly · last revised {lastRevised}</p>
+        </div>
+        <div className={styles.nowList}>
+          {now
+            .filter((item) => item.entries.length > 0)
+            .map((item, i) => (
+              <div
+                key={item.type}
+                className={`${styles.nowItem}${i === 0 ? ` ${styles.nowItemFirst}` : ''}`}
+              >
+                <div className={styles.nowType}>{item.type}</div>
+                <div className={styles.nowBody}>
+                  <ul>
+                    {item.entries.map((entry) => {
+                      if (typeof entry === 'string') {
+                        return <li key={entry}>{entry}</li>;
+                      }
+                      const e = entry as NowEntry;
+                      const content = (
+                        <>
+                          <strong>{e.title}</strong>
+                          {e.author && <> — {e.author}</>}
+                          {e.note && (
+                            <>
+                              {' '}
+                              <em>({e.note})</em>
+                            </>
+                          )}
+                        </>
+                      );
+                      return (
+                        <li key={e.title}>
+                          {e.url ? (
+                            <a href={e.url} target="_blank" rel="noopener noreferrer">
+                              {content}
+                            </a>
+                          ) : (
+                            content
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  {item.aside && <p className={styles.nowAside}>{item.aside}</p>}
+                </div>
+              </div>
+            ))}
+        </div>
+      </section>
+
+      {/* Featured */}
+      <section className={styles.featuredSection}>
+        <div className={styles.sectionHeader}>
+          <SectionLabel>Featured</SectionLabel>
+          <h2 className={styles.sectionTitle}>What I&apos;m up to.</h2>
+        </div>
+        <div className={styles.featuredGrid}>
+          <Card variant="ochre" num="work" title={work[0].title} href="/work">
+            <div className={styles.snapshotBody}>
+              <div className={styles.snapshotMeta}>
+                {work[0].company} · {work[0].period}
+              </div>
+              {work[0].impact && <p className={styles.snapshotImpact}>{work[0].impact}</p>}
+              <p className={styles.snapshotDesc}>{work[0].description}</p>
+              <span className={styles.snapshotLink}>View all work ↗</span>
+            </div>
+          </Card>
+          <Card
+            variant="ochre"
+            num="portfolio"
+            title={
+              <>
+                {projects[0].domain.replace(/\.ai$/, '')}
+                <span className={styles.domainAi}>.ai</span>
+              </>
+            }
+            href="/portfolio"
+          >
+            <div className={styles.snapshotBody}>
+              <div className={styles.snapshotTagline}>{projects[0].tagline}</div>
+              <p className={styles.snapshotDesc}>{projects[0].description}</p>
+              <span className={styles.snapshotLink}>View all portfolio ↗</span>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* About teaser */}
+      <section className={styles.aboutSection}>
+        <div className={styles.aboutGrid}>
+          <div className={styles.sectionHeader}>
+            <SectionLabel>About</SectionLabel>
+            <h2 className={styles.sectionTitle}>A bit about me.</h2>
+          </div>
+          <div className={styles.aboutProse}>
+            <p>
+              I&apos;m a senior fullstack engineer based in <strong>Los Angeles, CA</strong>.
+              I&apos;ve spent the last {yearsSince(careerStart).toLowerCase()} years shipping real
+              production code — currently <strong>WellTheory</strong>, previously{' '}
+              <strong>Digg</strong> and <strong>Sensible Weather</strong>.
+            </p>
+            <p>
+              I spend most of my energy right now on what good engineering actually looks like when
+              an agent is doing the writing — what practices hold up, what paradigms break, and what
+              changes when you&apos;re reviewing code you didn&apos;t write but are responsible for.
+              A lot of what made me good at the job before is still useful, some of it is in the
+              way, and most of the work right now is figuring out how to use the good parts in this
+              new iteration of the job.
+            </p>
+            <p>
+              Outside of work you can usually find me hiking, reading, listening to records or
+              playing with my dog.
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

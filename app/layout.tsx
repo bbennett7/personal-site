@@ -36,13 +36,11 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: 'Bryn Bennett · Senior fullstack engineer',
-  description:
-    'Senior fullstack engineer based in Los Angeles. Building AI product systems that actually work in production.',
+  description: 'Senior fullstack engineer in Los Angeles, building AI-driven product systems.',
   metadataBase: new URL('https://brynbennett.dev'),
   openGraph: {
     title: 'Bryn Bennett · Senior fullstack engineer',
-    description:
-      'Senior fullstack engineer based in Los Angeles. Building AI product systems that actually work in production.',
+    description: 'Senior fullstack engineer in Los Angeles, building A-driven product systems.',
     url: 'https://brynbennett.dev',
     siteName: 'Bryn Bennett',
     locale: 'en_US',
