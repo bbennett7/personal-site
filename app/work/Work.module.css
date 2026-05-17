@@ -282,14 +282,11 @@
 }
 
 .featureGrid > * {
-  grid-row: span 2;
-  /* biome-ignore lint/complexity/noImportantStyles: overrides Card.module.css display:flex */
-  display: grid !important;
-  grid-template-rows: subgrid;
+  min-width: 0;
 }
 
 .featureBody {
-  padding: 0 28px 24px;
+  padding: 20px 28px 24px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -312,7 +309,6 @@
   grid-template-columns: 1fr;
   align-content: center;
   gap: 20px;
-  margin-top: 20px;
   box-shadow:
     0 1px 3px rgba(91, 81, 25, 0.07),
     0 6px 24px rgba(91, 81, 25, 0.1);

@@ -151,7 +151,7 @@ export const features: FeatureItem[] = [
   {
     id: 'syntx-2',
     company: 'Syntx',
-    title: 'Point-of-service integration server',
+    title: 'Third-party point-of-service integration server',
     description:
       'Set up a third-party POS integration server for [Qorum](https://www.qorum.com/), consuming the Toast API via Express and deploying on AWS with ElastiCache and ElasticBeanstalk to power mobile bar tab management.',
   },

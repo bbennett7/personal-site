@@ -159,35 +159,37 @@ export default function Work() {
                     </div>
                   </Card>
                 ))}
-              </div>
-              {stats && (
-                <div
-                  className={styles.statCard}
-                  data-cols={stats.stats.length >= 4 ? '2' : undefined}
-                >
-                  {stats.stats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className={stat.supporting ? styles.statItemWithSupporting : styles.statItem}
-                    >
-                      <div className={styles.statMain}>
-                        <div className={styles.statValue}>{stat.value}</div>
-                        <div className={styles.statLabel}>{stat.label}</div>
-                      </div>
-                      {stat.supporting && (
-                        <div className={styles.statSupporting}>
-                          {stat.supporting.map((sub) => (
-                            <div key={sub.label} className={styles.statSubItem}>
-                              <div className={styles.statSubValue}>{sub.value}</div>
-                              <div className={styles.statSubLabel}>{sub.label}</div>
-                            </div>
-                          ))}
+                {stats && (
+                  <div
+                    className={styles.statCard}
+                    data-cols={stats.stats.length >= 4 ? '2' : undefined}
+                  >
+                    {stats.stats.map((stat) => (
+                      <div
+                        key={stat.label}
+                        className={
+                          stat.supporting ? styles.statItemWithSupporting : styles.statItem
+                        }
+                      >
+                        <div className={styles.statMain}>
+                          <div className={styles.statValue}>{stat.value}</div>
+                          <div className={styles.statLabel}>{stat.label}</div>
                         </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
+                        {stat.supporting && (
+                          <div className={styles.statSupporting}>
+                            {stat.supporting.map((sub) => (
+                              <div key={sub.label} className={styles.statSubItem}>
+                                <div className={styles.statSubValue}>{sub.value}</div>
+                                <div className={styles.statSubLabel}>{sub.label}</div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           );
         })}
