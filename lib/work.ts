@@ -7,11 +7,19 @@ export type Company = {
   blurb?: string;
 };
 
+export type FeatureListItem = {
+  artist: string;
+  title: string;
+  year: string;
+  url?: string;
+};
+
 export type FeatureItem = {
   id: string;
   company: string;
   title: string;
-  description: string;
+  description?: string;
+  items?: FeatureListItem[];
 };
 
 export type CompanyStat = {
@@ -83,7 +91,7 @@ export const features: FeatureItem[] = [
     company: 'Digg',
     title: 'Human-in-the-loop review workflow',
     description:
-      'Designed and built the internal review workflow where human moderators evaluated decisions from V1 of our content moderation system, generating labeled eval datasets that enabled V2 with autonomous decision making, while also immediately improving content-quality and user experience on the platform.',
+      'Designed and built the internal review workflow where human moderators evaluated decisions from V1 of our content moderation system, generating labeled eval datasets that enabled V2 with autonomous decision making, while also immediately improving content quality and user experience on the platform.',
   },
   {
     id: 'digg-3',
@@ -140,6 +148,36 @@ export const features: FeatureItem[] = [
     title: 'Core Go platform',
     description:
       "Partnered with the principal engineer to architect and build the core platform from the ground up in Go, establishing the foundation for the Weather Guarantee, the company's greenfield climatech product. Maintained 99% uptime across SLA-bound partner systems.",
+  },
+  {
+    id: 'vh-1',
+    company: 'Velvet Hammer',
+    title: 'Records',
+    items: [
+      { artist: 'Deftones', title: 'Gore', year: '2016', url: 'https://music.apple.com/us/album/gore/1078767494' },
+      { artist: 'AFI', title: 'The Blood Album', year: '2017', url: 'https://music.apple.com/us/album/afi-the-blood-album/1167253870' },
+      { artist: 'Code Orange', title: 'Forever', year: '2017', url: 'https://music.apple.com/us/album/forever/1168090912' },
+      { artist: 'AFI', title: 'The Missing Man', year: '2018', url: 'https://music.apple.com/us/album/the-missing-man-ep/1444465123' },
+      { artist: 'Smashing Pumpkins', title: 'Shiny and Oh So Bright', year: '2018', url: 'https://music.apple.com/us/album/shiny-and-oh-so-bright-vol-1-lp-no-past-no-future-no-sun/1889618036' },
+      { artist: 'Daron Malakian & Scars on Broadway', title: 'Dictator', year: '2018', url: 'https://music.apple.com/us/album/dictator/1389930673' },
+      { artist: 'Alice in Chains', title: 'Rainier Fog', year: '2018', url: 'https://music.apple.com/us/album/rainier-fog/1398087293' },
+    ],
+  },
+  {
+    id: 'vh-2',
+    company: 'Velvet Hammer',
+    title: 'Tours',
+    items: [
+      { artist: 'Deftones / Incubus', title: 'Co-headline Tour', year: '2015' },
+      { artist: 'Deftones', title: 'Gore Tour', year: '2016' },
+      { artist: 'AFI', title: 'The Blood Tour', year: '2017' },
+      { artist: 'Code Orange', title: 'Forever Tour', year: '2017' },
+      { artist: 'Deftones / Rise Against', title: 'Co-headline Tour', year: '2017' },
+      { artist: 'System Of A Down', title: 'European Tour', year: '2017' },
+      { artist: 'Alice in Chains', title: 'Rainier Fog Tour', year: '2018' },
+      { artist: 'Smashing Pumpkins', title: 'Shiny and Oh So Bright Tour', year: '2018' },
+      { artist: 'System Of A Down', title: 'North American Tour', year: '2018' },
+    ],
   },
   {
     id: 'syntx-1',

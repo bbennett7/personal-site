@@ -299,6 +299,56 @@
   color: var(--olive-mid);
 }
 
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.featureList li {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-body), "Bitter", serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--olive-mid);
+}
+
+.featureListArtist {
+  font-weight: 600;
+  color: var(--olive-dark);
+}
+
+.featureListTitle {
+  font-style: italic;
+}
+
+.featureListLink {
+  color: var(--olive-mid);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+.featureListLink:hover {
+  color: var(--olive-dark);
+}
+
+.featureListLink .featureListTitle {
+  font-style: italic;
+}
+
+.featureListYear {
+  margin-left: auto;
+  font-size: 12px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
 /* ── Stat accent card ────────────────────────────────────── */
 
 .statCard {
@@ -310,8 +360,18 @@
   align-content: center;
   gap: 20px;
   box-shadow:
-    0 1px 3px rgba(91, 81, 25, 0.07),
-    0 6px 24px rgba(91, 81, 25, 0.1);
+    0 2px 4px rgba(91, 81, 25, 0.15),
+    0 6px 16px rgba(91, 81, 25, 0.2);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 4px 8px rgba(91, 81, 25, 0.18),
+    0 14px 32px rgba(91, 81, 25, 0.28);
 }
 
 .statCard[data-cols="2"] {

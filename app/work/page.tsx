@@ -2,7 +2,14 @@ import { Card } from '@/components/Card';
 import { PageHeader } from '@/components/PageHeader';
 import { SectionLabel } from '@/components/SectionLabel';
 import { careerStart, yearsSince } from '@/lib/dates';
-import { type Company, companies, companyStats, features, press, timelineStart } from '@/lib/work';
+import {
+  type Company,
+  companies,
+  companyStats,
+  features,
+  press,
+  timelineStart,
+} from '@/lib/work';
 import styles from './Work.module.css';
 
 function renderLinkedText(text: string) {
@@ -138,6 +145,7 @@ export default function Work() {
           { name: 'Digg', meta: 'Senior Fullstack Engineer · 2025–2026' },
           { name: 'Sensible Weather', meta: 'Staff Fullstack Engineer · 2020–2025' },
           { name: 'Syntx', meta: 'Fullstack Engineer · 2019–2020' },
+          { name: 'Velvet Hammer', meta: 'Artist Manager · 2014–2019' },
         ].map((group) => {
           const groupFeatures = features.filter((f) => f.company === group.name);
           const stats = companyStats.find((s) => s.company === group.name);
@@ -155,7 +163,37 @@ export default function Work() {
                     title={item.title}
                   >
                     <div className={styles.featureBody}>
-                      <p className={styles.featureDesc}>{renderLinkedText(item.description)}</p>
+                      {item.items ? (
+                        <ul className={styles.featureList}>
+                          {item.items.map((li) => (
+                            <li key={`${li.artist}-${li.title}`}>
+                              {li.url ? (
+                                <a
+                                  href={li.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className={styles.featureListLink}
+                                >
+                                  <span className={styles.featureListArtist}>{li.artist}</span>
+                                  {' — '}
+                                  <span className={styles.featureListTitle}>{li.title}</span>
+                                </a>
+                              ) : (
+                                <>
+                                  <span className={styles.featureListArtist}>{li.artist}</span>
+                                  {' — '}
+                                  <span className={styles.featureListTitle}>{li.title}</span>
+                                </>
+                              )}
+                              <span className={styles.featureListYear}>{li.year}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className={styles.featureDesc}>
+                          {renderLinkedText(item.description ?? '')}
+                        </p>
+                      )}
                     </div>
                   </Card>
                 ))}
