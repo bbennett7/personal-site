@@ -1,18 +1,3 @@
-/* ── Shared section header ─────────────────────────────────── */
-
-.sectionHeader {
-  margin-bottom: 40px;
-}
-
-.sectionTitle {
-  font-family: var(--font-heading), "Sulphur Point", sans-serif;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.15;
-  color: var(--olive-dark);
-  letter-spacing: -0.01em;
-}
-
 .sectionIntro {
   font-family: var(--font-body), "Bitter", serif;
   font-size: 15px;
@@ -135,14 +120,6 @@
   font-weight: 400;
   color: var(--olive-mid);
   font-size: 14px;
-}
-
-.favWhy {
-  font-family: var(--font-body), "Bitter", serif;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--olive-mid);
-  margin-top: 2px;
 }
 
 /* ── Personal Section ──────────────────────────────────────── */

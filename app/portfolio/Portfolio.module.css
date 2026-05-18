@@ -237,16 +237,6 @@ a.visit {
   min-height: 280px;
 }
 
-.fillerLabel {
-  font-family: var(--font-mono), "IBM Plex Mono", monospace;
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--ochre);
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
-}
-
 .fillerHeading {
   font-family: var(--font-heading), "Sulphur Point", sans-serif;
   font-weight: 700;

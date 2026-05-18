@@ -243,19 +243,6 @@
   border-top: 1px solid var(--line);
 }
 
-.sectionHeader {
-  margin-bottom: 48px;
-}
-
-.sectionTitle {
-  font-family: var(--font-heading), "Sulphur Point", sans-serif;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.15;
-  color: var(--olive-dark);
-  letter-spacing: -0.01em;
-}
-
 /* ── Company groups ──────────────────────────────────────── */
 
 .companyGroup {
@@ -362,16 +349,6 @@
   box-shadow:
     0 2px 4px rgba(91, 81, 25, 0.15),
     0 6px 16px rgba(91, 81, 25, 0.2);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.statCard:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 4px 8px rgba(91, 81, 25, 0.18),
-    0 14px 32px rgba(91, 81, 25, 0.28);
 }
 
 .statCard[data-cols="2"] {
@@ -604,14 +581,6 @@
 
   .shippedSection {
     padding: 48px 0;
-  }
-
-  .sectionHeader {
-    margin-bottom: 32px;
-  }
-
-  .sectionTitle {
-    font-size: 26px;
   }
 
   .featureGrid {
