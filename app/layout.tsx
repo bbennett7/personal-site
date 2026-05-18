@@ -3,6 +3,7 @@ import { Bitter, IBM_Plex_Mono, Sulphur_Point } from 'next/font/google';
 import localFont from 'next/font/local';
 import { Footer } from '@/components/Footer';
 import { Nav } from '@/components/Nav';
+import { PostHogProvider } from '@/components/PostHogProvider';
 import './globals.css';
 
 const psychedelic = localFont({
@@ -53,16 +54,25 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#d4a440',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#d4a440' },
+    { media: '(prefers-color-scheme: dark)', color: '#141210' },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${psychedelic.variable} ${sulphur.variable} ${bitter.variable} ${plexMono.variable}`}
     >
-      <body>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})()`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -92,14 +102,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-        <a href="#main" className="skip-link">
-          Skip to main content
-        </a>
-        <div className="container">
-          <Nav />
-          <main id="main">{children}</main>
-        </div>
-        <Footer />
+      </head>
+      <body>
+        <PostHogProvider>
+          <a href="#main" className="skip-link">
+            Skip to main content
+          </a>
+          <div className="container">
+            <Nav />
+            <main id="main">{children}</main>
+          </div>
+          <Footer />
+        </PostHogProvider>
       </body>
     </html>
   );

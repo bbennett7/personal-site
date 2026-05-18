@@ -6,6 +6,32 @@
   --paper: #ffffff;
   --paper-warm: #fafaf6;
   --line: rgba(106, 96, 40, 0.15);
+  --shadow: rgba(91, 81, 25, 0.1);
+  --shadow-strong: rgba(91, 81, 25, 0.16);
+  --surface-inverted: #5b5119;
+  --text-on-inverted: #fafaf6;
+  --text-on-inverted-muted: rgba(250, 250, 246, 0.75);
+  --text-on-inverted-faint: rgba(250, 250, 246, 0.5);
+  --border-on-inverted: rgba(212, 164, 64, 0.2);
+  --error: #9b3b3b;
+}
+
+[data-theme="dark"] {
+  --ochre: #e0b34e;
+  --olive: #9a9280;
+  --olive-dark: #e8e2d4;
+  --olive-mid: #b5ad9a;
+  --paper: #1a1e14;
+  --paper-warm: #22261c;
+  --line: rgba(212, 164, 64, 0.12);
+  --shadow: rgba(0, 0, 0, 0.25);
+  --shadow-strong: rgba(0, 0, 0, 0.4);
+  --surface-inverted: #282c20;
+  --text-on-inverted: #e8e2d4;
+  --text-on-inverted-muted: rgba(232, 226, 212, 0.75);
+  --text-on-inverted-faint: rgba(232, 226, 212, 0.5);
+  --border-on-inverted: rgba(212, 164, 64, 0.2);
+  --error: #e05555;
 }
 
 *,
@@ -18,6 +44,11 @@
 
 html {
   overflow-x: clip;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -33,6 +64,9 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Never blue — override browser defaults globally */
@@ -76,7 +110,7 @@ a:active {
   z-index: 100;
   padding: 12px 24px;
   background: var(--ochre);
-  color: var(--paper);
+  color: var(--text-on-inverted);
   font-family: var(--font-mono), "IBM Plex Mono", monospace;
   font-size: 12px;
   font-weight: 500;
