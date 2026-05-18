@@ -29,6 +29,6 @@ export const projects: Project[] = [
     tagline: 'Research for everyone.',
     status: 'in progress',
     description:
-      'A modern interface for consuming the latest and most cutting-edge research, all from arXiv.',
+      'A modern interface for consuming the latest cutting-edge research, all from arXiv.',
   },
 ];

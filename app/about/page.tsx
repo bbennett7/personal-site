@@ -48,7 +48,7 @@ export default function About() {
               I started my career in music, not in tech. The Bitcoin and blockchain explosion happened while I was working in artist management, and part of my job became vetting the various applications of the technology that we were being pitched for our clients, then making recommendations on pursuing them. This meant that I had to actually understand Bitcoin and the blockchain — a journey that started with total naivety and ended with writing my first lines of code (though admittedly, still pretty naive).
             </p>
             <p>
-              As soon as I started, I fell in love with engineering. My background in product and marketing, initially something I felt inadequate because of, ended up making it particularly fun to build. My experience gave me what I needed to have a specific but valuable role on teams. I could speak both the language of product/business, and of engineering, allowing me to be a bridge between the two.
+              As soon as I started, I fell in love with engineering. My background in product and marketing, which initially made me feel inadequate in my new field, ended up making it particularly fun to build. My experience gave me what I needed to have a specific but valuable role on teams. I could speak both the language of product/business, and of engineering, allowing me to be a bridge between the two.
             </p>
           </div>
         </div>

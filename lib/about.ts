@@ -193,7 +193,7 @@ export const personalItems: PersonalItem[] = [
   },
   {
     title: 'My goals',
-    body: 'I\'ve run a marathon, and climbed Mt. Whitney. Next I want to complete the Lake Tahoe Triathalon, but that will take a lot more training.',
+    body: 'I\'ve run a marathon, and climbed Mt. Whitney. Next I want to complete the Lake Tahoe Triathlon, but that will take a lot more training.',
     image: {
       src: '/images/goals.jpeg',
       alt: 'Mountain summit view at sunrise',
