@@ -63,9 +63,9 @@ a.visit {
   border-radius: 12px;
   overflow: hidden;
   box-shadow:
-    0 1px 3px rgba(91, 81, 25, 0.07),
-    0 6px 24px rgba(91, 81, 25, 0.1);
-  background: var(--olive-dark);
+    0 1px 3px var(--shadow),
+    0 6px 24px var(--shadow);
+  background: var(--surface-inverted);
   min-height: 280px;
 }
 
@@ -243,7 +243,7 @@ a.visit {
   font-size: 40px;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  color: var(--paper);
+  color: var(--text-on-inverted);
   text-shadow: 0 1px 16px rgba(0, 0, 0, 0.5);
 }
 

@@ -51,7 +51,7 @@
 
 .timelineEntry:hover .timelineDot {
   transform: scale(1.75);
-  box-shadow: 0 0 0 4px rgba(212, 164, 64, 0.2);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ochre) 20%, transparent);
 }
 
 .timelineNameRow {
@@ -339,7 +339,7 @@
 /* ── Stat accent card ────────────────────────────────────── */
 
 .statCard {
-  background: var(--olive-dark);
+  background: var(--surface-inverted);
   border-radius: 12px;
   padding: 28px;
   display: grid;
@@ -347,8 +347,8 @@
   align-content: center;
   gap: 20px;
   box-shadow:
-    0 2px 4px rgba(91, 81, 25, 0.15),
-    0 6px 16px rgba(91, 81, 25, 0.2);
+    0 2px 4px var(--shadow),
+    0 6px 16px var(--shadow-strong);
 }
 
 .statCard[data-cols="2"] {
@@ -387,7 +387,7 @@
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: rgba(250, 250, 246, 0.6);
+  color: var(--text-on-inverted-muted);
 }
 
 .statSupporting {
@@ -414,7 +414,7 @@
   font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: rgba(250, 250, 246, 0.6);
+  color: var(--text-on-inverted-muted);
 }
 
 .inlineLink {
