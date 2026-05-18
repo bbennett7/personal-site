@@ -3,7 +3,6 @@ import { Bitter, IBM_Plex_Mono, Sulphur_Point } from 'next/font/google';
 import localFont from 'next/font/local';
 import { Footer } from '@/components/Footer';
 import { Nav } from '@/components/Nav';
-import { ScrollToTop } from '@/components/ScrollToTop';
 import './globals.css';
 
 const psychedelic = localFont({
@@ -14,7 +13,7 @@ const psychedelic = localFont({
 });
 
 const sulphur = Sulphur_Point({
-  weight: ['300', '400', '700'],
+  weight: ['400', '700'],
   subsets: ['latin'],
   variable: '--font-heading',
   display: 'swap',
@@ -36,16 +35,20 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Bryn Bennett · Senior fullstack engineer',
+  title: {
+    default: 'Bryn Bennett · Senior fullstack engineer',
+    template: '%s | Bryn Bennett',
+  },
   description: 'Senior fullstack engineer in Los Angeles, building AI-driven product systems.',
   metadataBase: new URL('https://brynbennett.dev'),
   openGraph: {
-    title: 'Bryn Bennett · Senior fullstack engineer',
-    description: 'Senior fullstack engineer in Los Angeles, building AI-driven product systems.',
     url: 'https://brynbennett.dev',
     siteName: 'Bryn Bennett',
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
   },
 };
 
@@ -60,10 +63,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${psychedelic.variable} ${sulphur.variable} ${bitter.variable} ${plexMono.variable}`}
     >
       <body>
-        <ScrollToTop />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Bryn Bennett',
+              jobTitle: 'Senior Fullstack Engineer',
+              worksFor: { '@type': 'Organization', name: 'WellTheory' },
+              url: 'https://brynbennett.dev',
+              sameAs: ['https://linkedin.com/in/brynbennett', 'https://github.com/bbennett7'],
+              description:
+                'Senior fullstack engineer in Los Angeles, building AI-driven product systems.',
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Bryn Bennett',
+              url: 'https://brynbennett.dev',
+              description:
+                'Senior fullstack engineer in Los Angeles, building AI-driven product systems.',
+            }),
+          }}
+        />
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         <div className="container">
           <Nav />
-          <main>{children}</main>
+          <main id="main">{children}</main>
         </div>
         <Footer />
       </body>
