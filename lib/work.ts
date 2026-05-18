@@ -147,7 +147,7 @@ export const features: FeatureItem[] = [
     company: 'Sensible Weather',
     title: 'Core Go platform',
     description:
-      "Partnered with the principal engineer to architect and build the core platform from the ground up in Go, establishing the foundation for the Weather Guarantee, the company's greenfield climatech product. Maintained 99% uptime across SLA-bound partner systems.",
+      "Partnered with the principal engineer to architect and build the core platform from the ground up in Go, establishing the foundation for the Weather Guarantee, the company's greenfield climate tech product. Maintained 99% uptime across SLA-bound partner systems.",
   },
   {
     id: 'vh-1',
@@ -184,7 +184,7 @@ export const features: FeatureItem[] = [
     company: 'Syntx',
     title: 'Financial services due diligence platform',
     description:
-      'Built the full stack internal platform for a financial services client engaged in due diligence and mortgage loan review using React, Express, SQL, and Auth0.',
+      'Built the fullstack internal platform for a financial services client engaged in due diligence and mortgage loan review using React, Express, SQL, and Auth0.',
   },
   {
     id: 'syntx-2',
