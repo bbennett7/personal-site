@@ -1,9 +1,10 @@
 import { Card } from '@/components/Card';
 import { PageHeader } from '@/components/PageHeader';
 import { SectionLabel } from '@/components/SectionLabel';
+import { careerStart, yearsSince } from '@/lib/dates';
 import { lastRevised, type NowEntry, now } from '@/lib/now';
 import { projects } from '@/lib/portfolio';
-import { work } from '@/lib/work';
+import { features } from '@/lib/work';
 import styles from './Home.module.css';
 
 function currentQuarter() {
@@ -11,33 +12,6 @@ function currentQuarter() {
   const q = Math.ceil((now.getMonth() + 1) / 3);
   return `Q${q} ${now.getFullYear()}`;
 }
-
-const numberWords = [
-  'Zero',
-  'One',
-  'Two',
-  'Three',
-  'Four',
-  'Five',
-  'Six',
-  'Seven',
-  'Eight',
-  'Nine',
-  'Ten',
-  'Eleven',
-  'Twelve',
-  'Thirteen',
-  'Fourteen',
-  'Fifteen',
-];
-
-function yearsSince(start: Date) {
-  const now = new Date();
-  const years = Math.floor((now.getTime() - start.getTime()) / (365.25 * 24 * 60 * 60 * 1000));
-  return numberWords[years] ?? String(years);
-}
-
-const careerStart = new Date(2019, 9);
 
 export default function Home() {
   return (
@@ -56,7 +30,7 @@ export default function Home() {
         status={`Engineering @ WellTheory · ${currentQuarter()}`}
       >
         <p>
-          {yearsSince(careerStart)} years shipping production code - currently <em>WellTheory</em>,
+          {yearsSince(careerStart)} years shipping production code — currently <em>WellTheory</em>,
           previously <em>Digg</em> and <em>Sensible Weather</em>. Based in Los Angeles.
         </p>
       </PageHeader>
@@ -123,13 +97,10 @@ export default function Home() {
           <h2 className={styles.sectionTitle}>What I&apos;m up to.</h2>
         </div>
         <div className={styles.featuredGrid}>
-          <Card variant="ochre" num="work" title={work[0].title} href="/work">
+          <Card variant="ochre" num="work" title={features[0].title} href="/work">
             <div className={styles.snapshotBody}>
-              <div className={styles.snapshotMeta}>
-                {work[0].company} · {work[0].period}
-              </div>
-              {work[0].impact && <p className={styles.snapshotImpact}>{work[0].impact}</p>}
-              <p className={styles.snapshotDesc}>{work[0].description}</p>
+              <div className={styles.snapshotMeta}>{features[0].company}</div>
+              <p className={styles.snapshotDesc}>{features[0].description}</p>
               <span className={styles.snapshotLink}>View all work ↗</span>
             </div>
           </Card>
@@ -147,7 +118,7 @@ export default function Home() {
             <div className={styles.snapshotBody}>
               <div className={styles.snapshotTagline}>{projects[0].tagline}</div>
               <p className={styles.snapshotDesc}>{projects[0].description}</p>
-              <span className={styles.snapshotLink}>View all portfolio ↗</span>
+              <span className={styles.snapshotLink}>View portfolio ↗</span>
             </div>
           </Card>
         </div>
@@ -176,7 +147,7 @@ export default function Home() {
               new iteration of the job.
             </p>
             <p>
-              Outside of work you can usually find me hiking, reading, listening to records or
+              Outside of work, you can usually find me hiking, reading, listening to records or
               playing with my dog.
             </p>
           </div>
