@@ -5,7 +5,7 @@ type PageHeaderProps = {
   label: string;
   heading: ReactNode;
   tagline: string;
-  status?: string;
+  status?: ReactNode;
   children?: ReactNode;
   variant?: 'home' | 'default';
 };

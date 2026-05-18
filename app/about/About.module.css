@@ -1,0 +1,235 @@
+.sectionIntro {
+  font-family: var(--font-body), "Bitter", serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--olive-mid);
+  margin-top: 16px;
+  max-width: 680px;
+}
+
+/* ── Story Section ─────────────────────────────────────────── */
+
+.storySection {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.proseGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.storyLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.headshot {
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 320px;
+}
+
+.headshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.prose {
+  font-family: var(--font-body), "Bitter", serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--olive-mid);
+  max-width: 720px;
+}
+
+.prose p {
+  margin-bottom: 20px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose em {
+  font-style: italic;
+  font-weight: 700;
+  color: var(--ochre);
+}
+
+.prose strong {
+  color: var(--olive-dark);
+  font-weight: 700;
+}
+
+.prose a {
+  color: var(--olive-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--ochre);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.prose a:hover {
+  color: var(--ochre);
+}
+
+/* ── Influences Section ────────────────────────────────────── */
+
+.influencesSection {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.favsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.favList {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.favItem {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.favName {
+  font-family: var(--font-heading), "Sulphur Point", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--olive-dark);
+  letter-spacing: -0.005em;
+}
+
+.favBy {
+  font-family: var(--font-body), "Bitter", serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--olive-mid);
+  font-size: 14px;
+}
+
+/* ── Personal Section ──────────────────────────────────────── */
+
+.personalSection {
+  padding: 80px 0;
+}
+
+.personalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.personalItem {
+  border-top: 2px solid var(--ochre);
+  padding-top: 16px;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+}
+
+.personalItemTitle {
+  font-family: var(--font-heading), "Sulphur Point", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--olive-dark);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.personalItemBody {
+  font-family: var(--font-body), "Bitter", serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--olive-mid);
+  flex: 1;
+}
+
+.personalImage {
+  margin-top: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.personalImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.personalImagePortrait {
+  margin-top: 16px;
+}
+
+.personalImagePortraitFrame {
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--ochre);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.personalImageCaption {
+  font-family: var(--font-body), "Bitter", serif;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--olive-mid);
+  margin-top: 8px;
+  text-align: right;
+  min-height: 20px;
+}
+
+.personalImagePortraitFrame img {
+  display: block;
+  width: auto;
+  height: 100%;
+  border-radius: 0;
+}
+
+.personalItemBody a {
+  color: var(--olive-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--ochre);
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.personalItemBody a:hover {
+  color: var(--ochre);
+}
+
+/* ── Mobile ────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .proseGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .favsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .personalGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,84 @@
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 1px 3px rgba(91, 81, 25, 0.07),
+    0 6px 24px rgba(91, 81, 25, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card[data-interactive]:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 2px 6px rgba(91, 81, 25, 0.08),
+    0 16px 48px rgba(91, 81, 25, 0.16);
+}
+
+.card[data-variant="ochre"] {
+  background: var(--paper-warm);
+}
+
+.card[data-variant="olive"] {
+  background: var(--paper);
+}
+
+/* ── Header ── */
+
+.cardHeader {
+  padding: 18px 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.card[data-variant="ochre"] .cardHeader {
+  background: var(--ochre);
+}
+
+.card[data-variant="olive"] .cardHeader {
+  background: var(--olive-dark);
+}
+
+.cardNum {
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.cardNumValue {
+  vertical-align: -2px;
+}
+
+.card[data-variant="ochre"] .cardNum {
+  color: var(--olive-dark);
+}
+
+.card[data-variant="olive"] .cardNum {
+  color: var(--ochre);
+}
+
+.cardTitle {
+  font-family: var(--font-heading), "Sulphur Point", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  padding-bottom: 2px;
+}
+
+.card[data-variant="ochre"] .cardTitle {
+  color: var(--paper);
+}
+
+.card[data-variant="olive"] .cardTitle {
+  color: var(--paper);
+}

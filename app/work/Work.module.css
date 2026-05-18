@@ -1,0 +1,589 @@
+/* ── Companies section ─────────────────────────────────────── */
+
+.companiesSection {
+  padding: 48px 0 64px;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline {
+  position: relative;
+  margin-top: 48px;
+  height: 80px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4px;
+  height: 1px;
+  background: var(--line);
+}
+
+.timeline:has(.timelineEntry:hover) .timelineEntry:not(:hover) {
+  opacity: 0.35;
+}
+
+.timelineEntry {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+  transition: opacity 0.2s ease;
+}
+
+.timelineDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ochre);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  top: 0.5px;
+  margin-bottom: 16px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.timelineEntry:hover .timelineDot {
+  transform: scale(1.75);
+  box-shadow: 0 0 0 4px rgba(212, 164, 64, 0.2);
+}
+
+.timelineNameRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.timelineCompany {
+  font-family: var(--font-heading), "Sulphur Point", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--olive-dark);
+  transition: color 0.2s ease;
+}
+
+.timelineEntry:hover .timelineCompany {
+  color: var(--ochre);
+}
+
+.timelineRole,
+.timelinePeriod {
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0;
+  transform: translateY(-3px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.timelineRole {
+  color: var(--olive);
+  margin-bottom: 3px;
+}
+
+.timelinePeriod {
+  color: var(--ochre);
+  font-weight: 700;
+}
+
+.timelineEntry:hover .timelineRole,
+.timelineEntry:hover .timelinePeriod {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timelineSubEntry {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineSubDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--olive-dark);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  top: 2px;
+  margin-bottom: 4px;
+}
+
+.timelineSubName {
+  font-family: var(--font-heading), "Sulphur Point", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--ochre);
+  white-space: nowrap;
+}
+
+.timelineEntryContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineSubContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineSubBlurbMobile {
+  display: none;
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--olive);
+  margin-top: 4px;
+}
+
+.timelineSubBlurb {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--olive);
+  width: 160px;
+  opacity: 0;
+  transform: translateY(3px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.timelineSubEntry:hover .timelineSubBlurb {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timelineSubEntry::before {
+  content: "";
+  position: absolute;
+  top: 24.75px;
+  left: -0.5px;
+  width: 4px;
+  height: 12px;
+  border-right: 1px dotted var(--ochre);
+  border-bottom: 1px dotted var(--ochre);
+  border-bottom-right-radius: 4px;
+}
+
+.timelineSubEntry + .timelineSubEntry::before {
+  left: -2px;
+  top: 24.75px;
+}
+
+.timelineConnector {
+  position: absolute;
+  top: 36px;
+  height: 0;
+  border-top: 1px dotted var(--ochre);
+  margin-left: 42px;
+}
+
+/* ── Press section ─────────────────────────────────────────── */
+
+.pressSection {
+  padding: 80px 0;
+}
+
+.pressGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.pressBody {
+  padding: 20px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pressHeadline {
+  font-family: var(--font-heading), "Sulphur Point", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  color: var(--olive-dark);
+  flex: 1;
+  margin-bottom: 12px;
+}
+
+.pressMeta {
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--ochre);
+}
+
+/* ── Shipped section ──────────────────────────────────────── */
+
+.shippedSection {
+  padding: 80px 0;
+  border-top: 1px solid var(--line);
+}
+
+/* ── Company groups ──────────────────────────────────────── */
+
+.companyGroup {
+  margin-bottom: 64px;
+}
+
+.companyGroup:last-child {
+  margin-bottom: 0;
+}
+
+.companyLabel {
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ochre);
+  margin-bottom: 20px;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.featureGrid > * {
+  min-width: 0;
+}
+
+.featureBody {
+  padding: 20px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.featureDesc {
+  font-family: var(--font-body), "Bitter", serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--olive-mid);
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.featureList li {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-body), "Bitter", serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--olive-mid);
+}
+
+.featureListArtist {
+  font-weight: 600;
+  color: var(--olive-dark);
+}
+
+.featureListTitle {
+  font-style: italic;
+}
+
+.featureListLink {
+  color: var(--olive-mid);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease;
+}
+
+.featureListLink:hover {
+  color: var(--olive-dark);
+}
+
+.featureListLink .featureListTitle {
+  font-style: italic;
+}
+
+.featureListYear {
+  margin-left: auto;
+  font-size: 12px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+/* ── Stat accent card ────────────────────────────────────── */
+
+.statCard {
+  background: var(--olive-dark);
+  border-radius: 12px;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: center;
+  gap: 20px;
+  box-shadow:
+    0 2px 4px rgba(91, 81, 25, 0.15),
+    0 6px 16px rgba(91, 81, 25, 0.2);
+}
+
+.statCard[data-cols="2"] {
+  grid-template-columns: 1fr 1fr;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statItemWithSupporting {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.statMain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statValue {
+  font-family: var(--font-heading), "Sulphur Point", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--ochre);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.statLabel {
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(250, 250, 246, 0.6);
+}
+
+.statSupporting {
+  display: flex;
+  gap: 20px;
+}
+
+.statSubItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.statSubValue {
+  font-family: var(--font-heading), "Sulphur Point", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ochre);
+  line-height: 1.1;
+}
+
+.statSubLabel {
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(250, 250, 246, 0.6);
+}
+
+.inlineLink {
+  color: var(--olive-dark);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--ochre);
+  transition: color 0.15s ease;
+}
+
+.inlineLink:hover {
+  color: var(--ochre);
+}
+
+/* ── Mobile ────────────────────────────────────────────────── */
+
+@media (max-width: 700px) {
+  .companiesSection {
+    padding: 32px 0 48px;
+  }
+
+  .timeline {
+    height: auto;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 20px;
+  }
+
+  .timeline::before {
+    left: 3px;
+    right: auto;
+    top: 20px;
+    bottom: 16px;
+    width: 1px;
+    height: auto;
+  }
+
+  .timelineEntry {
+    position: relative;
+    /* biome-ignore lint/complexity/noImportantStyles: overrides inline style={{ left }} */
+    left: auto !important;
+    top: auto;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+  }
+
+  .timelineDot {
+    top: 0.5px;
+    margin-bottom: 0;
+    margin-left: -20.5px;
+    flex-shrink: 0;
+  }
+
+  .timelineEntryContent {
+    margin-top: -5px;
+  }
+
+  .timelineEntry:hover .timelineDot {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .timelineNameRow {
+    margin-bottom: 2px;
+  }
+
+  .timelineCompany {
+    font-size: 17px;
+  }
+
+  .timelineRole,
+  .timelinePeriod {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .timelineSubEntry {
+    position: relative;
+    /* biome-ignore lint/complexity/noImportantStyles: overrides inline style={{ left }} */
+    left: auto !important;
+    top: auto;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 12px 0;
+  }
+
+  .timelineSubName {
+    white-space: normal;
+  }
+
+  .timelineSubDot {
+    margin-left: -19px;
+    flex-shrink: 0;
+  }
+
+  .timelineSubContent {
+    margin-top: -6px;
+    margin-left: 12px;
+  }
+
+  .timelineSubEntry::before {
+    display: block;
+    top: -12px;
+    left: 4px;
+    width: 0;
+    height: calc(100% + 27px);
+    border-left: 1px dotted var(--ochre);
+    border-bottom: none;
+    border-right: none;
+    border-radius: 0;
+  }
+
+  .timelineSubEntry + .timelineSubEntry::before {
+    display: none;
+  }
+
+  .timelineSubEntry::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 14px;
+    width: 10px;
+    height: 4px;
+    border-left: 1px dotted var(--ochre);
+    border-bottom: 1px dotted var(--ochre);
+    border-bottom-left-radius: 4px;
+  }
+
+  .timelineSubEntry + .timelineSubEntry::after {
+    content: "";
+    width: 8px;
+  }
+
+  .timelineSubBlurb {
+    display: none;
+  }
+
+  .timelineSubBlurbMobile {
+    display: block;
+  }
+
+  .timelineSubName {
+    font-size: 14px;
+  }
+
+  .timelineConnector {
+    display: none;
+  }
+
+  .pressSection {
+    padding: 48px 0 0;
+  }
+
+  .pressGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .shippedSection {
+    padding: 48px 0;
+  }
+
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+}

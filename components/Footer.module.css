@@ -1,17 +1,5 @@
-.wrap {
-  width: 100%;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 48px 48px;
-}
-
-@media (max-width: 700px) {
-  .wrap {
-    padding: 0 24px 32px;
-  }
-}
-
 .footer {
+  margin-bottom: 48px;
   background: var(--olive-dark);
   color: var(--paper-warm);
   padding: 64px 56px 48px;
@@ -20,6 +8,7 @@
 
 @media (max-width: 700px) {
   .footer {
+    margin-bottom: 32px;
     padding: 48px 32px 36px;
     border-radius: 20px;
   }
@@ -32,7 +21,7 @@
   margin-bottom: 60px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 36px;
@@ -41,6 +30,13 @@
 
   .grid > div:first-child {
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 

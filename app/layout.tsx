@@ -13,7 +13,7 @@ const psychedelic = localFont({
 });
 
 const sulphur = Sulphur_Point({
-  weight: ['300', '400', '700'],
+  weight: ['400', '700'],
   subsets: ['latin'],
   variable: '--font-heading',
   display: 'swap',
@@ -35,18 +35,20 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Bryn Bennett · Senior fullstack engineer',
-  description:
-    'Senior fullstack engineer based in Los Angeles. Building AI product systems that actually work in production.',
+  title: {
+    default: 'Bryn Bennett · Senior fullstack engineer',
+    template: '%s | Bryn Bennett',
+  },
+  description: 'Senior fullstack engineer in Los Angeles, building AI-driven product systems.',
   metadataBase: new URL('https://brynbennett.dev'),
   openGraph: {
-    title: 'Bryn Bennett · Senior fullstack engineer',
-    description:
-      'Senior fullstack engineer based in Los Angeles. Building AI product systems that actually work in production.',
     url: 'https://brynbennett.dev',
     siteName: 'Bryn Bennett',
     locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
   },
 };
 
@@ -61,9 +63,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${psychedelic.variable} ${sulphur.variable} ${bitter.variable} ${plexMono.variable}`}
     >
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Bryn Bennett',
+              jobTitle: 'Senior Fullstack Engineer',
+              worksFor: { '@type': 'Organization', name: 'WellTheory' },
+              url: 'https://brynbennett.dev',
+              sameAs: ['https://linkedin.com/in/brynbennett', 'https://github.com/bbennett7'],
+              description:
+                'Senior fullstack engineer in Los Angeles, building AI-driven product systems.',
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Bryn Bennett',
+              url: 'https://brynbennett.dev',
+              description:
+                'Senior fullstack engineer in Los Angeles, building AI-driven product systems.',
+            }),
+          }}
+        />
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         <div className="container">
           <Nav />
-          <main>{children}</main>
+          <main id="main">{children}</main>
         </div>
         <Footer />
       </body>

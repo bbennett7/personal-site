@@ -10,7 +10,10 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
+      }
     }
   },
   "formatter": {
@@ -33,6 +36,15 @@
     }
   },
   "files": {
-    "includes": ["**", "!node_modules", "!.next", "!out", "!public", "!mocks", "!design-system"]
+    "includes": [
+      "**",
+      "!node_modules",
+      "!.next",
+      "!out",
+      "!public",
+      "!mocks",
+      "!design-system",
+      "!next-env.d.ts"
+    ]
   }
 }

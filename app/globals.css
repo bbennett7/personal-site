@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 :root {
   --ochre: #d4a440;
   --olive: #6a6028;
@@ -55,19 +53,62 @@ a:active {
   padding: 0 48px;
 }
 
+@media (max-width: 1400px) {
+  .container {
+    padding: 0 128px;
+  }
+}
+
 @media (max-width: 700px) {
   .container {
     padding: 0 24px;
   }
 }
 
-/* Section eyebrow label */
-.section-label {
+/* Skip to main content */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 100;
+  padding: 12px 24px;
+  background: var(--ochre);
+  color: var(--paper);
   font-family: var(--font-mono), "IBM Plex Mono", monospace;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--ochre);
-  margin-bottom: 14px;
+  letter-spacing: 0.15em;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+}
+
+/* Section heading */
+.section-title {
+  font-family: var(--font-heading), "Sulphur Point", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.15;
+  color: var(--olive-dark);
+  letter-spacing: -0.01em;
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 700px) {
+  .section-title {
+    font-size: 26px;
+  }
 }
