@@ -12,28 +12,14 @@ const BG = '#5B5119';
 const OCHRE = '#D4A440';
 const PAPER = '#FAFAF6';
 
-async function loadGoogleFont(family: string, weight: number): Promise<ArrayBuffer> {
-  const css = await fetch(
-    `https://fonts.googleapis.com/css2?family=${family.replace(/ /g, '+')}:wght@${weight}`,
-    {
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; de-at) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1',
-      },
-    },
-  ).then((r) => r.text());
-
-  const fontUrl = css.match(/url\(([^)]+)\)/)?.[1];
-  if (!fontUrl) throw new Error(`Failed to load font: ${family}`);
-  return fetch(fontUrl).then((r) => r.arrayBuffer());
+function loadFont(filename: string) {
+  return readFileSync(join(process.cwd(), 'fonts', filename));
 }
 
 export default async function OGImage() {
-  const psychedelicFont = readFileSync(join(process.cwd(), 'fonts/PsychedelicPeace.ttf'));
-  const [sulphurFont, plexFont] = await Promise.all([
-    loadGoogleFont('Sulphur Point', 700),
-    loadGoogleFont('IBM Plex Mono', 400),
-  ]);
+  const psychedelicFont = loadFont('PsychedelicPeace.ttf');
+  const sulphurFont = loadFont('SulphurPoint-Bold.ttf');
+  const plexFont = loadFont('IBMPlexMono-Regular.ttf');
 
   return new ImageResponse(
     <div
