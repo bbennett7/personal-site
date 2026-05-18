@@ -10,13 +10,15 @@ export function Nav() {
       <Link href="/" className={styles.wordmarkLink} aria-label="Bryn Bennett — home">
         <Wordmark size="md" />
       </Link>
-      <ul className={styles.links}>
-        {NAV_LINKS.map(({ href, label }) => (
-          <li key={href}>
-            <NavLink href={href} label={label} />
-          </li>
-        ))}
-      </ul>
+      <div className={styles.right}>
+        <ul className={styles.links}>
+          {NAV_LINKS.map(({ href, label }) => (
+            <li key={href}>
+              <NavLink href={href} label={label} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 }
