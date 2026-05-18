@@ -61,7 +61,7 @@ function ProjectCard({ domain, url, tagline, description, index }: Project & { i
         <p className={styles.description}>{description}</p>
         {url ? (
           <a href={url} target="_blank" rel="noopener noreferrer" className={styles.visit}>
-            Visit ↗
+            Visit ↗︎
           </a>
         ) : (
           <span className={styles.comingSoon}>Coming Soon</span>
