@@ -54,12 +54,12 @@
 .textarea:focus {
   outline: none;
   border-color: var(--ochre);
-  box-shadow: 0 0 0 3px rgba(212, 164, 64, 0.15);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ochre) 15%, transparent);
 }
 
 .input::placeholder,
 .textarea::placeholder {
-  color: rgba(106, 96, 40, 0.35);
+  color: color-mix(in srgb, var(--olive) 45%, transparent);
 }
 
 .textarea {
@@ -74,8 +74,8 @@
   font-weight: 700;
   font-size: 16px;
   letter-spacing: 0.02em;
-  color: var(--paper);
-  background: var(--olive-dark);
+  color: var(--text-on-inverted);
+  background: var(--surface-inverted);
   border: none;
   border-radius: 8px;
   padding: 16px 32px;
@@ -107,8 +107,8 @@
   font-size: 15px;
   line-height: 1.6;
   color: var(--olive-dark);
-  background: rgba(212, 164, 64, 0.1);
-  border: 1px solid rgba(212, 164, 64, 0.3);
+  background: color-mix(in srgb, var(--ochre) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ochre) 30%, transparent);
   border-radius: 8px;
   padding: 20px 24px;
 }
@@ -117,7 +117,7 @@
   font-family: var(--font-body), "Bitter", serif;
   font-size: 14px;
   line-height: 1.5;
-  color: #9b3b3b;
+  color: var(--error);
 }
 
 /* ── Mobile ────────────────────────────────────────────────── */
