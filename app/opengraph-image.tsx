@@ -45,7 +45,7 @@ export default async function OGImage() {
         backgroundColor: BG,
       }}
     >
-      <div style={{ width: '100%', height: 4, backgroundColor: OCHRE }} />
+      <div style={{ width: '100%', height: 8, backgroundColor: OCHRE }} />
 
       <div
         style={{
@@ -59,11 +59,11 @@ export default async function OGImage() {
         <div
           style={{
             fontFamily: 'IBM Plex Mono',
-            fontSize: 18,
+            fontSize: 36,
             color: OCHRE,
             textTransform: 'uppercase' as const,
             letterSpacing: '0.25em',
-            marginBottom: 32,
+            marginBottom: 48,
           }}
         >
           {'// Portfolio'}
@@ -71,20 +71,40 @@ export default async function OGImage() {
 
         <div
           style={{
-            fontFamily: 'PsychedelicPeace',
-            fontSize: 96,
-            color: OCHRE,
-            lineHeight: 1.1,
-            marginBottom: 16,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            marginBottom: 32,
           }}
         >
-          Bryn Bennett
+          <div
+            style={{
+              fontFamily: 'PsychedelicPeace',
+              fontSize: 160,
+              color: OCHRE,
+              lineHeight: 0.85,
+              letterSpacing: '0.03em',
+            }}
+          >
+            BRYN
+          </div>
+          <div
+            style={{
+              fontFamily: 'PsychedelicPeace',
+              fontSize: 160,
+              color: OCHRE,
+              lineHeight: 0.85,
+              marginTop: '0.01em',
+            }}
+          >
+            BENNETT
+          </div>
         </div>
 
         <div
           style={{
             fontFamily: 'Sulphur Point',
-            fontSize: 32,
+            fontSize: 48,
             fontWeight: 700,
             color: PAPER,
           }}
@@ -97,7 +117,7 @@ export default async function OGImage() {
         <div
           style={{
             fontFamily: 'IBM Plex Mono',
-            fontSize: 16,
+            fontSize: 28,
             textTransform: 'uppercase' as const,
             letterSpacing: '0.2em',
             color: 'rgba(250, 250, 246, 0.4)',
