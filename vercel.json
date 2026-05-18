@@ -1,6 +1,14 @@
 {
   "headers": [
     {
+      "source": "/opengraph-image",
+      "headers": [{ "key": "Content-Type", "value": "image/png" }]
+    },
+    {
+      "source": "/twitter-image",
+      "headers": [{ "key": "Content-Type", "value": "image/png" }]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Frame-Options", "value": "DENY" },
