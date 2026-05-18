@@ -1,7 +1,15 @@
+import type { Metadata } from 'next';
 import { Card } from '@/components/Card';
 import { PageHeader } from '@/components/PageHeader';
 import { type Project, projects } from '@/lib/portfolio';
 import styles from './Portfolio.module.css';
+
+export const metadata: Metadata = {
+  title: 'Portfolio',
+  description:
+    'Side projects, experiments, and things I build — insidethe.ai, askdumbquestions.ai, and more.',
+  alternates: { canonical: '/portfolio' },
+};
 
 function FillerCard() {
   return (
@@ -18,7 +26,7 @@ function FillerCard() {
           </filter>
         </defs>
       </svg>
-      <div className={styles.lava} aria-hidden>
+      <div className={styles.lava} aria-hidden="true">
         <div className={`${styles.blob} ${styles.blob1}`} />
         <div className={`${styles.blob} ${styles.blob2}`} />
         <div className={`${styles.blob} ${styles.blob3}`} />
@@ -47,9 +55,6 @@ function ProjectCard({ domain, url, tagline, description, index }: Project & { i
           <span className={styles.tld}>{domain.slice(dot)}</span>
         </>
       }
-      // href={url}
-      target="_blank"
-      rel="noopener noreferrer"
     >
       <div className={styles.body}>
         <div className={styles.tagline}>{tagline}</div>

@@ -1,22 +1,22 @@
+import type { Metadata } from 'next';
 import { Card } from '@/components/Card';
 import { PageHeader } from '@/components/PageHeader';
 import { SectionLabel } from '@/components/SectionLabel';
 import { careerStart, yearsSince } from '@/lib/dates';
-import {
-  type Company,
-  companies,
-  companyStats,
-  features,
-  press,
-  timelineStart,
-} from '@/lib/work';
+import { type Company, companies, companyStats, features, press, timelineStart } from '@/lib/work';
 import styles from './Work.module.css';
+
+export const metadata: Metadata = {
+  title: 'Work',
+  description: 'Projects and features shipped at WellTheory, Digg, and Sensible Weather.',
+  alternates: { canonical: '/work' },
+};
 
 function renderLinkedText(text: string) {
   const parts = text.split(/(\[[^\]]+\]\([^)]+\))/);
   return parts.map((part) => {
     const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    if (match) {
+    if (match && /^https?:\/\//.test(match[2])) {
       return (
         <a
           key={match[2]}
@@ -70,8 +70,14 @@ function TimelineSubItem({ company }: { company: Company }) {
   );
 }
 
-const digg = companies.find((c) => c.name === 'Digg') as Company;
-const basicIntel = companies.find((c) => c.name === 'Basic Intelligence') as Company;
+function findCompany(name: string): Company {
+  const company = companies.find((c) => c.name === name);
+  if (!company) throw new Error(`Expected "${name}" in companies array`);
+  return company;
+}
+
+const digg = findCompany('Digg');
+const basicIntel = findCompany('Basic Intelligence');
 
 export default function Work() {
   return (
@@ -89,7 +95,10 @@ export default function Work() {
 
       {/* Companies — timeline */}
       <section className={styles.companiesSection}>
-        <SectionLabel>Companies</SectionLabel>
+        <div className={'section-header'}>
+          <SectionLabel>Companies</SectionLabel>
+          <h2 className={'section-title'}>Timeline.</h2>
+        </div>
         <div className={styles.timeline}>
           {companies.map((c) =>
             c.variant === 'sub' ? (
@@ -110,9 +119,9 @@ export default function Work() {
 
       {/* Press & accolades */}
       <section className={styles.pressSection}>
-        <div className={styles.sectionHeader}>
+        <div className={'section-header'}>
           <SectionLabel>Press</SectionLabel>
-          <h2 className={styles.sectionTitle}>Press &amp; accolades.</h2>
+          <h2 className={'section-title'}>Press &amp; accolades.</h2>
         </div>
         <div className={styles.pressGrid}>
           {press.map((item) => (
@@ -136,9 +145,9 @@ export default function Work() {
 
       {/* Shipped */}
       <section className={styles.shippedSection}>
-        <div className={styles.sectionHeader}>
+        <div className={'section-header'}>
           <SectionLabel>Shipped</SectionLabel>
-          <h2 className={styles.sectionTitle}>What I&apos;ve built.</h2>
+          <h2 className={'section-title'}>What I&apos;ve built.</h2>
         </div>
 
         {[

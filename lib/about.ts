@@ -37,13 +37,13 @@ export const influences: InfluenceCategory[] = [
       {
         name: 'How to Create a Mind',
         by: 'Ray Kurzweil',
-        why: 'Kurzweil\'s neurobiological deep-dive completely changed how I think about intelligence and humanity, and the philosophical questions surrounding them.',
+        why: "Kurzweil's neurobiological deep-dive completely changed how I think about intelligence and humanity, and the philosophical questions surrounding them.",
         url: 'https://bookshop.org/p/books/how-to-create-a-mind-the-secret-of-human-thought-revealed-ray-kurzweil/a35979eb119bd86c?ean=9780143124047&next=t',
       },
       {
         name: 'The Dharma Bums',
         by: 'Jack Kerouac',
-        why: 'To me, this book is about finding meaning in friendship and nature — what\'s not to love? It\'s tied for my all-time favorite book.',
+        why: "To me, this book is about finding meaning in friendship and nature — what's not to love? It's tied for my all-time favorite book.",
         url: 'https://bookshop.org/p/books/the-dharma-bums-penguin-classics-deluxe-edition-jack-kerouac/3b2852d8878a70cc?ean=9780143039600&next=t',
       },
       {
@@ -55,7 +55,7 @@ export const influences: InfluenceCategory[] = [
       {
         name: 'The Art of Happiness',
         by: 'Dalai Lama',
-        why: 'As someone who is forever trying to fit a steady meditation practice into modern life, this book is the closest thing to a guide that I\'ve found on doing just that (metaphorically).',
+        why: "As someone who is forever trying to fit a steady meditation practice into modern life, this book is the closest thing to a guide that I've found on doing just that (metaphorically).",
         url: 'https://bookshop.org/p/books/the-art-of-happiness-10th-anniversary-edition-a-handbook-for-living-dalai-lama/8a879905efd947e0?ean=9781573227544&next=t',
       },
       {
@@ -78,7 +78,7 @@ export const influences: InfluenceCategory[] = [
       {
         name: 'Compound Engineering: The AI-native engineering philosophy',
         by: 'Kieran Klaassen',
-        why: "",
+        why: '',
         url: 'https://every.to/guides/compound-engineering',
       },
       {
@@ -105,7 +105,7 @@ export const influences: InfluenceCategory[] = [
     name: 'Newsletters & Organizations',
     items: [
       {
-        name: 'Lenny\'s Newsletter',
+        name: "Lenny's Newsletter",
         by: 'Lenny Rachitsky',
         why: '',
         url: 'https://www.lennysnewsletter.com/',
@@ -162,9 +162,9 @@ export const influences: InfluenceCategory[] = [
 export const personalItems: PersonalItem[] = [
   {
     title: 'My environment',
-    body: "Currently living in the hills of Los Angeles, nestled in one of its many beautiful canyons.",
+    body: 'Currently living in the hills of Los Angeles, nestled in one of its many beautiful canyons.',
     image: {
-      src: '/images/environment.jpeg',
+      src: '/images/environment.webp',
       alt: 'View of the Laurel Canyon hills',
       width: 1200,
       height: 900,
@@ -175,7 +175,7 @@ export const personalItems: PersonalItem[] = [
     title: 'My hobbies',
     body: 'Music, hiking, reading, whiskey, travel, gardening, and camping. Aspirational: restoring vintage cars, astronomy, and rock climbing.',
     image: {
-      src: '/images/hobbies.jpeg',
+      src: '/images/hobbies.webp',
       alt: 'Music wall with guitar, vinyl records, and framed prints',
       width: 1200,
       height: 900,
@@ -185,7 +185,7 @@ export const personalItems: PersonalItem[] = [
     title: 'My family',
     body: 'My wife and our dog, Zuma. ❤️',
     image: {
-      src: '/images/family.jpeg',
+      src: '/images/family.webp',
       alt: 'Dog on a hike in the canyon',
       width: 900,
       height: 1200,
@@ -193,9 +193,9 @@ export const personalItems: PersonalItem[] = [
   },
   {
     title: 'My goals',
-    body: 'I\'ve run a marathon, and climbed Mt. Whitney. Next I want to complete the Lake Tahoe Triathlon, but that will take a lot more training.',
+    body: "I've run a marathon, and climbed Mt. Whitney. Next I want to complete the Lake Tahoe Triathlon, but that will take a lot more training.",
     image: {
-      src: '/images/goals.jpeg',
+      src: '/images/goals.webp',
       alt: 'Mountain summit view at sunrise',
       width: 1200,
       height: 900,

@@ -1,17 +1,18 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Card } from '@/components/Card';
+import { CurrentQuarter } from '@/components/CurrentQuarter';
 import { PageHeader } from '@/components/PageHeader';
 import { SectionLabel } from '@/components/SectionLabel';
 import { careerStart, yearsSince } from '@/lib/dates';
-import { lastRevised, type NowEntry, now } from '@/lib/now';
+import { lastRevised, now } from '@/lib/now';
 import { projects } from '@/lib/portfolio';
 import { features } from '@/lib/work';
 import styles from './Home.module.css';
 
-function currentQuarter() {
-  const now = new Date();
-  const q = Math.ceil((now.getMonth() + 1) / 3);
-  return `Q${q} ${now.getFullYear()}`;
-}
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
 
 export default function Home() {
   return (
@@ -27,7 +28,11 @@ export default function Home() {
           </>
         }
         tagline="Senior fullstack engineer building AI-driven product systems."
-        status={`Engineering @ WellTheory · ${currentQuarter()}`}
+        status={
+          <>
+            Engineering @ WellTheory · <CurrentQuarter />
+          </>
+        }
       >
         <p>
           {yearsSince(careerStart)} years shipping production code — currently <em>WellTheory</em>,
@@ -37,9 +42,9 @@ export default function Home() {
 
       {/* Now */}
       <section className={styles.nowSection}>
-        <div className={styles.sectionHeader}>
+        <div className={'section-header'}>
           <SectionLabel>Now</SectionLabel>
-          <h2 className={styles.sectionTitle}>What I&apos;m into.</h2>
+          <h2 className={'section-title'}>What I&apos;m into.</h2>
           <p className={styles.sectionMeta}>Updated monthly · last revised {lastRevised}</p>
         </div>
         <div className={styles.nowList}>
@@ -57,7 +62,7 @@ export default function Home() {
                       if (typeof entry === 'string') {
                         return <li key={entry}>{entry}</li>;
                       }
-                      const e = entry as NowEntry;
+                      const e = entry;
                       const content = (
                         <>
                           <strong>{e.title}</strong>
@@ -92,9 +97,9 @@ export default function Home() {
 
       {/* Featured */}
       <section className={styles.featuredSection}>
-        <div className={styles.sectionHeader}>
+        <div className={'section-header'}>
           <SectionLabel>Featured</SectionLabel>
-          <h2 className={styles.sectionTitle}>What I&apos;m up to.</h2>
+          <h2 className={'section-title'}>What I&apos;m up to.</h2>
         </div>
         <div className={styles.featuredGrid}>
           <Card variant="ochre" num="work" title={features[0].title} href="/work">
@@ -127,9 +132,9 @@ export default function Home() {
       {/* About teaser */}
       <section className={styles.aboutSection}>
         <div className={styles.aboutGrid}>
-          <div className={styles.sectionHeader}>
+          <div className={'section-header'}>
             <SectionLabel>About</SectionLabel>
-            <h2 className={styles.sectionTitle}>A bit about me.</h2>
+            <h2 className={'section-title'}>A bit about me.</h2>
           </div>
           <div className={styles.aboutProse}>
             <p>
@@ -149,6 +154,11 @@ export default function Home() {
             <p>
               Outside of work, you can usually find me hiking, reading, listening to records or
               playing with my dog.
+            </p>
+            <p>
+              <Link href="/about">More about me ↗</Link>
+              {' · '}
+              <Link href="/contact">Get in touch ↗</Link>
             </p>
           </div>
         </div>

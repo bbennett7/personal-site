@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card } from '@/components/Card';
@@ -6,9 +7,33 @@ import { SectionLabel } from '@/components/SectionLabel';
 import { influences, personalItems } from '@/lib/about';
 import styles from './About.module.css';
 
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'Engineer, reader, hiker, dog-mom — from artist management to fullstack engineering.',
+  alternates: { canonical: '/about' },
+};
+
 export default function About() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ProfilePage',
+            mainEntity: {
+              '@type': 'Person',
+              name: 'Bryn Bennett',
+              url: 'https://brynbennett.dev',
+              jobTitle: 'Senior Fullstack Engineer',
+              description:
+                'Engineer, reader, hiker, dog-mom — from artist management to fullstack engineering.',
+            },
+          }),
+        }}
+      />
       <PageHeader
         label="// About"
         heading={
@@ -32,23 +57,32 @@ export default function About() {
         <SectionLabel>Story</SectionLabel>
         <div className={styles.proseGrid}>
           <div className={styles.storyLeft}>
-            <h2 className={styles.sectionTitle}>How I got here.</h2>
+            <h2 className={'section-title'}>How I got here.</h2>
             <div className={styles.headshot}>
               <Image
-                src="/images/headshot.jpeg"
+                src="/images/headshot.webp"
                 alt="Bryn Bennett"
                 width={400}
                 height={400}
-                unoptimized
+                priority
               />
             </div>
           </div>
           <div className={styles.prose}>
             <p>
-              I started my career in music, not in tech. The Bitcoin and blockchain explosion happened while I was working in artist management, and part of my job became vetting the various applications of the technology that we were being pitched for our clients, then making recommendations on pursuing them. This meant that I had to actually understand Bitcoin and the blockchain — a journey that started with total naivety and ended with writing my first lines of code (though admittedly, still pretty naive).
+              I started my career in music, not in tech. The Bitcoin and blockchain explosion
+              happened while I was working in artist management, and part of my job became vetting
+              the various applications of the technology that we were being pitched for our clients,
+              then making recommendations on pursuing them. This meant that I had to actually
+              understand Bitcoin and the blockchain — a journey that started with total naivety and
+              ended with writing my first lines of code (though admittedly, still pretty naive).
             </p>
             <p>
-              As soon as I started, I fell in love with engineering. My background in product and marketing, which initially made me feel inadequate in my new field, ended up making it particularly fun to build. My experience gave me what I needed to have a specific but valuable role on teams. I could speak both the language of product/business, and of engineering, allowing me to be a bridge between the two.
+              As soon as I started, I fell in love with engineering. My background in product and
+              marketing, which initially made me feel inadequate in my new field, ended up making it
+              particularly fun to build. My experience gave me what I needed to have a specific but
+              valuable role on teams. I could speak both the language of product/business, and of
+              engineering, allowing me to be a bridge between the two.
             </p>
           </div>
         </div>
@@ -56,9 +90,9 @@ export default function About() {
 
       {/* Influences */}
       <section className={styles.influencesSection}>
-        <div className={styles.sectionHeader}>
+        <div className={'section-header'}>
           <SectionLabel>Influences</SectionLabel>
-          <h2 className={styles.sectionTitle}>What&apos;s shaped my thinking.</h2>
+          <h2 className={'section-title'}>What&apos;s shaped my thinking.</h2>
           <p className={styles.sectionIntro}>
             The books, papers, podcasts, talks, writing, and people that have most shaped how I
             think about engineering, AI, and craft.
@@ -101,9 +135,9 @@ export default function About() {
 
       {/* Personal */}
       <section className={styles.personalSection}>
-        <div className={styles.sectionHeader}>
+        <div className={'section-header'}>
           <SectionLabel>Personal</SectionLabel>
-          <h2 className={styles.sectionTitle}>Outside of work.</h2>
+          <h2 className={'section-title'}>Outside of work.</h2>
         </div>
         <div className={styles.personalGrid}>
           {personalItems.map((item) => (
@@ -122,7 +156,13 @@ export default function About() {
                 )}
               </p>
               {item.image && (
-                <figure className={item.image.height > item.image.width ? styles.personalImagePortrait : styles.personalImage}>
+                <figure
+                  className={
+                    item.image.height > item.image.width
+                      ? styles.personalImagePortrait
+                      : styles.personalImage
+                  }
+                >
                   {item.image.height > item.image.width ? (
                     <div className={styles.personalImagePortraitFrame}>
                       <Image
@@ -130,7 +170,6 @@ export default function About() {
                         alt={item.image.alt}
                         width={item.image.width}
                         height={item.image.height}
-                        unoptimized
                       />
                     </div>
                   ) : (
@@ -139,7 +178,6 @@ export default function About() {
                       alt={item.image.alt}
                       width={item.image.width}
                       height={item.image.height}
-                      unoptimized
                     />
                   )}
                   <figcaption className={styles.personalImageCaption}>

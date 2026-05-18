@@ -1,39 +1,32 @@
 'use client';
 
-import { type FormEvent, useState } from 'react';
+import { useActionState, useEffect, useRef } from 'react';
 import styles from './Contact.module.css';
 
 const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID;
 
-type Status = 'idle' | 'submitting' | 'success' | 'error';
+type Status = 'idle' | 'success' | 'error';
+
+async function submitContact(_prev: Status, formData: FormData): Promise<Status> {
+  try {
+    const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      method: 'POST',
+      body: formData,
+      headers: { Accept: 'application/json' },
+    });
+    return res.ok ? 'success' : 'error';
+  } catch {
+    return 'error';
+  }
+}
 
 export function ContactForm() {
-  const [status, setStatus] = useState<Status>('idle');
+  const [status, action, isPending] = useActionState(submitContact, 'idle');
+  const formRef = useRef<HTMLFormElement>(null);
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus('submitting');
-
-    const form = e.currentTarget;
-    const data = new FormData(form);
-
-    try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-
-      if (res.ok) {
-        setStatus('success');
-        form.reset();
-      } else {
-        setStatus('error');
-      }
-    } catch {
-      setStatus('error');
-    }
-  }
+  useEffect(() => {
+    if (status === 'success') formRef.current?.reset();
+  }, [status]);
 
   if (status === 'success') {
     return (
@@ -42,7 +35,15 @@ export function ContactForm() {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form ref={formRef} className={styles.form} action={action}>
+      <input
+        type="text"
+        name="_gotcha"
+        style={{ display: 'none' }}
+        tabIndex={-1}
+        autoComplete="off"
+      />
+
       <div className={styles.field}>
         <label htmlFor="name" className={styles.label}>
           Name
@@ -90,8 +91,8 @@ export function ContactForm() {
         </p>
       )}
 
-      <button type="submit" className={styles.submit} disabled={status === 'submitting'}>
-        {status === 'submitting' ? 'Sending...' : 'Send message'}
+      <button type="submit" className={styles.submit} disabled={isPending}>
+        {isPending ? 'Sending...' : 'Send message'}
       </button>
     </form>
   );

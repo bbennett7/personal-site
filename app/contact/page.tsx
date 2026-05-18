@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import { PageHeader } from '@/components/PageHeader';
 import styles from './Contact.module.css';
 import { ContactForm } from './ContactForm';
+
+export const metadata: Metadata = {
+  title: 'Contact',
+  description: 'Get in touch — AI engineering questions, collaborations, or anything, really.',
+  alternates: { canonical: '/contact' },
+};
 
 export default function Contact() {
   return (
