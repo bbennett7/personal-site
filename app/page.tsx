@@ -106,7 +106,7 @@ export default function Home() {
             <div className={styles.snapshotBody}>
               <div className={styles.snapshotMeta}>{features[0].company}</div>
               <p className={styles.snapshotDesc}>{features[0].description}</p>
-              <span className={styles.snapshotLink}>View all work ↗</span>
+              <span className={styles.snapshotLink}>View all work ↗︎</span>
             </div>
           </Card>
           <Card
@@ -123,7 +123,7 @@ export default function Home() {
             <div className={styles.snapshotBody}>
               <div className={styles.snapshotTagline}>{projects[0].tagline}</div>
               <p className={styles.snapshotDesc}>{projects[0].description}</p>
-              <span className={styles.snapshotLink}>View portfolio ↗</span>
+              <span className={styles.snapshotLink}>View portfolio ↗︎</span>
             </div>
           </Card>
         </div>
@@ -156,9 +156,9 @@ export default function Home() {
               playing with my dog.
             </p>
             <p>
-              <Link href="/about">More about me ↗</Link>
+              <Link href="/about">More about me ↗︎</Link>
               {' · '}
-              <Link href="/contact">Get in touch ↗</Link>
+              <Link href="/contact">Get in touch ↗︎</Link>
             </p>
           </div>
         </div>
