@@ -3,6 +3,7 @@ import { Bitter, IBM_Plex_Mono, Sulphur_Point } from 'next/font/google';
 import localFont from 'next/font/local';
 import { Footer } from '@/components/Footer';
 import { Nav } from '@/components/Nav';
+import { ScrollToTop } from '@/components/ScrollToTop';
 import './globals.css';
 
 const psychedelic = localFont({
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://brynbennett.dev'),
   openGraph: {
     title: 'Bryn Bennett · Senior fullstack engineer',
-    description: 'Senior fullstack engineer in Los Angeles, building A-driven product systems.',
+    description: 'Senior fullstack engineer in Los Angeles, building AI-driven product systems.',
     url: 'https://brynbennett.dev',
     siteName: 'Bryn Bennett',
     locale: 'en_US',
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${psychedelic.variable} ${sulphur.variable} ${bitter.variable} ${plexMono.variable}`}
     >
       <body>
+        <ScrollToTop />
         <div className="container">
           <Nav />
           <main>{children}</main>
