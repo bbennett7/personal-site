@@ -5,12 +5,12 @@ import { Wordmark } from './Wordmark';
 
 export function Footer() {
   return (
-    <div className={styles.wrap}>
+    <div className="container">
       <footer className={styles.footer}>
         <div className={styles.grid}>
           <div>
             <div className={styles.mark}>
-              <Wordmark size="lg" />
+              <Wordmark size="lg" aria-hidden />
             </div>
             <p className={styles.tagline}>
               Senior fullstack engineer based in Los Angeles. Building AI-driven product systems.

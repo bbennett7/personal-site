@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { ReactNode } from 'react';
 import styles from './Card.module.css';
 
@@ -25,9 +26,24 @@ export function Card({ variant, num, title, children, href, target, rel }: CardP
     </>
   );
 
+  if (href?.startsWith('/')) {
+    return (
+      <Link href={href} className={styles.card} data-variant={variant} data-interactive>
+        {inner}
+      </Link>
+    );
+  }
+
   if (href) {
     return (
-      <a href={href} target={target} rel={rel} className={styles.card} data-variant={variant}>
+      <a
+        href={href}
+        target={target}
+        rel={rel}
+        className={styles.card}
+        data-variant={variant}
+        data-interactive
+      >
         {inner}
       </a>
     );
