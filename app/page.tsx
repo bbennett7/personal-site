@@ -67,12 +67,14 @@ export default function Home() {
                         <>
                           <strong>{e.title}</strong>
                           {e.author && <> — {e.author}</>}
-                          {e.note && (
+                          {e.note && !e.location && (
                             <>
                               {' '}
                               <em>({e.note})</em>
                             </>
                           )}
+                          {e.note && e.location && <> — {e.note}</>}
+                          {e.location && <>, {e.location}</>}
                         </>
                       );
                       return (

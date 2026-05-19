@@ -3,6 +3,7 @@ export type NowEntry = {
   author?: string;
   url?: string;
   note?: string;
+  location?: string;
 };
 
 export type NowItem = {
@@ -56,7 +57,14 @@ export const now: NowItem[] = [
   },
   {
     type: 'Attending',
-    entries: [],
+    entries: [
+      {
+        title: 'NY Tech Week — Product Meetup by Lenny\'s Newsletter',
+        url: 'https://partiful.com/e/9f5IxBLEiOhNjijLN7h3',
+        note: 'June 4',
+        location: 'New York City',
+      },
+    ],
   },
   {
     type: 'Thinking about',
