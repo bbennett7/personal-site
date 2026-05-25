@@ -15,7 +15,7 @@ export const projects: Project[] = [
   },
   {
     domain: 'askdumbquestions.ai',
-    // url: 'https://askdumbquestions.ai',
+    url: 'https://askdumbquestions.ai',
     tagline: 'One question. One answer. Every weekday.',
     description:
       'An accessible place to start exploring AI — to start learning about what it actually is and what it can do. The questions range from explaining the latest buzzy term to digging into the technology itself.',
