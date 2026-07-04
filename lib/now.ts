@@ -12,7 +12,7 @@ export type NowItem = {
   aside?: string;
 };
 
-export const lastRevised = 'May 2026';
+export const lastRevised = 'July 2026';
 
 export const now: NowItem[] = [
   {
