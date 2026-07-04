@@ -83,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               jobTitle: 'Senior Fullstack Engineer',
               worksFor: { '@type': 'Organization', name: 'WellTheory' },
               url: 'https://brynbennett.dev',
-              sameAs: ['https://linkedin.com/in/brynbennett', 'https://github.com/bbennett7'],
+              sameAs: ['https://linkedin.com/in/bryncbennett', 'https://github.com/bbennett7'],
               description:
                 'Senior fullstack engineer in Los Angeles, building AI-driven product systems.',
             }),
