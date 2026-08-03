@@ -8,7 +8,8 @@ import styles from './Work.module.css';
 
 export const metadata: Metadata = {
   title: 'Work',
-  description: 'Projects and features shipped at WellTheory, Digg, and Sensible Weather.',
+  description:
+    "Engineering work across WellTheory, Digg, and Sensible Weather — what I've shipped and owned on teams.",
   alternates: { canonical: '/work' },
 };
 

@@ -2,10 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Card } from '@/components/Card';
 import { CurrentQuarter } from '@/components/CurrentQuarter';
+import { NowList } from '@/components/NowList';
 import { PageHeader } from '@/components/PageHeader';
 import { SectionLabel } from '@/components/SectionLabel';
 import { careerStart, yearsSince } from '@/lib/dates';
-import { lastRevised, now } from '@/lib/now';
+import { lastRevised } from '@/lib/now';
 import { projects } from '@/lib/portfolio';
 import { features } from '@/lib/work';
 import styles from './Home.module.css';
@@ -47,54 +48,7 @@ export default function Home() {
           <h2 className={'section-title'}>What I&apos;m into.</h2>
           <p className={styles.sectionMeta}>Updated monthly · last revised {lastRevised}</p>
         </div>
-        <div className={styles.nowList}>
-          {now
-            .filter((item) => item.entries.length > 0)
-            .map((item, i) => (
-              <div
-                key={item.type}
-                className={`${styles.nowItem}${i === 0 ? ` ${styles.nowItemFirst}` : ''}`}
-              >
-                <div className={styles.nowType}>{item.type}</div>
-                <div className={styles.nowBody}>
-                  <ul>
-                    {item.entries.map((entry) => {
-                      if (typeof entry === 'string') {
-                        return <li key={entry}>{entry}</li>;
-                      }
-                      const e = entry;
-                      const content = (
-                        <>
-                          <strong>{e.title}</strong>
-                          {e.author && <> — {e.author}</>}
-                          {e.note && !e.location && (
-                            <>
-                              {' '}
-                              <em>({e.note})</em>
-                            </>
-                          )}
-                          {e.note && e.location && <> — {e.note}</>}
-                          {e.location && <>, {e.location}</>}
-                        </>
-                      );
-                      return (
-                        <li key={e.title}>
-                          {e.url ? (
-                            <a href={e.url} target="_blank" rel="noopener noreferrer">
-                              {content}
-                            </a>
-                          ) : (
-                            content
-                          )}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                  {item.aside && <p className={styles.nowAside}>{item.aside}</p>}
-                </div>
-              </div>
-            ))}
-        </div>
+        <NowList />
       </section>
 
       {/* Featured */}

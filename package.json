@@ -5,7 +5,7 @@
   "author": "Bryn Bennett <bryn.bennett@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start",
     "lint": "biome lint .",
