@@ -53,10 +53,15 @@ export const companies: Company[] = [
     period: '2020–2025',
     start: new Date(2020, 4),
   },
-  { name: 'Digg', title: 'Senior Engineer', period: '2025–2026', start: new Date(2025, 7) },
+  {
+    name: 'Digg',
+    title: 'Senior Fullstack Engineer',
+    period: '2025–2026',
+    start: new Date(2025, 7),
+  },
   {
     name: 'The Platform',
-    title: 'Senior Engineer',
+    title: 'Senior Fullstack Engineer',
     period: '2025–2026',
     start: new Date(2025, 7),
     variant: 'sub',
@@ -64,7 +69,7 @@ export const companies: Company[] = [
   },
   {
     name: 'Basic Intelligence',
-    title: 'Senior Engineer',
+    title: 'Senior Fullstack Engineer',
     period: '2026',
     start: new Date(2026, 2),
     variant: 'sub',
@@ -72,7 +77,7 @@ export const companies: Company[] = [
   },
   {
     name: 'WellTheory',
-    title: 'Senior Engineer',
+    title: 'Senior Fullstack Engineer',
     period: '2026–present',
     start: new Date(2026, 4),
   },

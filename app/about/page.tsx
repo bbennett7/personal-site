@@ -84,6 +84,15 @@ export default function About() {
               valuable role on teams. I could speak both the language of product/business, and of
               engineering, allowing me to be a bridge between the two.
             </p>
+            <p>
+              With AI now changing my field faster than I could have imagined, I&apos;m more
+              grateful than ever to have had a less traditional background. Every new model release
+              shifts my role as an engineer further from wrestling with the nuances of a language or
+              framework, and closer to problem solving through communication with and orchestration
+              of agents. The result is the same, but the skillsets required really are nothing
+              alike. And with each step, my first career feels more and more like preparation for
+              this one.
+            </p>
           </div>
         </div>
       </section>
